@@ -1,0 +1,28 @@
+ALGORITHME somme_elements_distinct
+
+VAR
+   A[10] : Table;
+   B[10] : Table;
+   i, j, sum := 0 : integer;
+   verif := true : boolean;
+BEGIN
+FOR i FROM 1 TO 10 STEP DO
+   WRITE ("Entrer l'element du premeier ensemnble");
+   READ (A[i]);
+END FOR
+FOR j FROM 1 TO 10 STEP DO
+   WRITE ("Entrer l'element du deuxieme ensemnble");
+   READ (B[j]);
+END FOR
+FOR i FROM 1 TO 10 STEP DO
+   FOR j FROM 1 TO 10 STEP DO
+      IF (A[i]=B[j]) THEN
+          verif := false;
+      END IF
+   END FOR
+   IF (verif = true) THEN
+       sum = sum + A[i];
+   END IF
+END FOR
+
+END
